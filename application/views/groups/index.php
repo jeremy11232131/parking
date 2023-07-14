@@ -33,7 +33,7 @@
           <?php endif; ?>
 
           <?php if(in_array('createGroup', $user_permission)): ?>
-            <a href="<?php echo base_url('groups/create') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Add Group </a>
+            <a href="<?php echo base_url('index.php/groups/create') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Add Group </a>
             <br /> <br />
           <?php endif; ?>
 
@@ -61,10 +61,10 @@
                         <?php if(in_array('updateGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>
                         <td>
                           <?php if(in_array('updateGroup', $user_permission)): ?>
-                          <a href="<?php echo base_url('groups/edit/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-edit"></i></a>  
+                          <a href="<?php echo base_url('index.php/groups/edit/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-edit"></i></a>  
                           <?php endif; ?>
                           <?php if(in_array('deleteGroup', $user_permission)): ?>
-                          <a href="<?php echo base_url('groups/delete/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
+                          <a href="<?php echo base_url('index.php/groups/delete/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
                           <?php endif; ?>
                         </td>
                         <?php endif; ?>

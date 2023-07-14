@@ -38,7 +38,7 @@
               <h3 class="box-title">Update Information</h3>
             </div>
             <!-- /.box-header -->
-            <form role="form" action="<?php base_url('users/setting') ?>" method="post">
+            <form role="form" action="<?php base_url('index.php/users/setting') ?>" method="post">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>
@@ -110,7 +110,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('users/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('index.php/users/') ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           </div>

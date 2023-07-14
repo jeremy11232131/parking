@@ -36,7 +36,7 @@
             <div class="box-header">
               <h3 class="box-title">Add Rate</h3>
             </div>
-            <form role="form" action="<?php base_url('rates/create') ?>" method="post">
+            <form role="form" action="<?php base_url('index.php/rates/create') ?>" method="post">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>
@@ -79,7 +79,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('rates/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('index.php/rates/') ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           </div>

@@ -57,7 +57,7 @@
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="<?php echo base_url('slots/iot') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('index.php/index.php/slots/iot') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -72,7 +72,7 @@
             <div class="icon">
               <i class="ion ion-person"></i>
             </div>
-            <a href="<?php echo base_url('users') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('index.php/users') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -88,7 +88,7 @@
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="<?php echo base_url('parking') ?>" class="small-box-footer">More Info<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('index.php/parking') ?>" class="small-box-footer">More Info<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -190,7 +190,7 @@
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="<?php echo base_url('slots/iot') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('index.php/slots/iot') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <div class="col-lg-4 col-xs-12"></div>

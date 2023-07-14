@@ -33,7 +33,7 @@
           <?php endif; ?>
           
           <?php if(in_array('createUser', $user_permission)): ?>
-            <a href="<?php echo base_url('users/create') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Add User</a>
+            <a href="<?php echo base_url('index.php/users/create') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Add User</a>
             <br /> <br />
           <?php endif; ?>
 
@@ -72,10 +72,10 @@
 
                         <td>
                           <?php if(in_array('updateUser', $user_permission)): ?>
-                            <a href="<?php echo base_url('users/edit/'.$v['user_info']['id']) ?>" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                            <a href="<?php echo base_url('index.php/users/edit/'.$v['user_info']['id']) ?>" class="btn btn-default"><i class="fa fa-edit"></i></a>
                           <?php endif; ?>
                           <?php if(in_array('deleteUser', $user_permission)): ?>
-                            <a href="<?php echo base_url('users/delete/'.$v['user_info']['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
+                            <a href="<?php echo base_url('index.php/users/delete/'.$v['user_info']['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
                           <?php endif; ?>
                         </td>
                       <?php endif; ?>

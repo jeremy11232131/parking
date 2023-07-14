@@ -36,7 +36,7 @@
             <div class="box-header">
               <h3 class="box-title">Add Category</h3>
             </div>
-            <form role="form" action="<?php base_url('category/create') ?>" method="post">
+            <form role="form" action="<?php base_url('index.php/category/create') ?>" method="post">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>
@@ -59,7 +59,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('category/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('index.php/category/') ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           </div>

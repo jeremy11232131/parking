@@ -33,7 +33,7 @@
           <?php endif; ?>
 
           <?php if(in_array('createCategory', $user_permission)): ?>
-            <a href="<?php echo base_url('category/create') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Add Category</a>
+            <a href="<?php echo base_url('index.php/category/create') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Add Category</a>
             <br /> <br />
           <?php endif; ?>
 
@@ -69,10 +69,10 @@
                       <?php if(in_array('updateCategory', $user_permission) || in_array('deleteCategory', $user_permission)): ?>
                       <td>
                         <?php if(in_array('updateCategory', $user_permission)): ?>
-                          <a href="<?php echo base_url('category/edit/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                          <a href="<?php echo base_url('index.php/category/edit/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-pencil"></i></a>
                         <?php endif; ?>
                         <?php if(in_array('deleteCategory', $user_permission)): ?>
-                          <a href="<?php echo base_url('category/delete/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
+                          <a href="<?php echo base_url('index.php/category/delete/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
                         <?php endif; ?>
                       </td>
                     </tr>

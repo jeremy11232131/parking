@@ -19,7 +19,7 @@
       <div class="row">
 
         <div class="col-md-12 col-xs-12">
-          <form class="form-inline" action="<?php echo base_url('reports/') ?>" method="POST">
+          <form class="form-inline" action="<?php echo base_url('index.php/reports/') ?>" method="POST">
             <div class="form-group">
               <label for="date">Year</label>
               <select class="form-control" name="select_year" id="select_year">

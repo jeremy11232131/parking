@@ -33,7 +33,7 @@
           <?php endif; ?>
 
           <?php if(in_array('createRates', $user_permission)): ?>
-            <a href="<?php echo base_url('rates/create') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Add Rate</a>
+            <a href="<?php echo base_url('index.php/rates/create') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Add Rate</a>
             <br /> <br />
           <?php endif; ?>
 
@@ -75,10 +75,10 @@
                       <?php if(in_array('updateRates', $user_permission) || in_array('deleteRates', $user_permission)): ?>
                       <td>
                         <?php if(in_array('updateRates', $user_permission)): ?>
-                          <a href="<?php echo base_url('rates/edit/'.$v['rate_info']['id']) ?>" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                          <a href="<?php echo base_url('index.php/rates/edit/'.$v['rate_info']['id']) ?>" class="btn btn-default"><i class="fa fa-pencil"></i></a>
                         <?php endif; ?>
                         <?php if(in_array('deleteRates', $user_permission)): ?>
-                          <a href="<?php echo base_url('rates/delete/'.$v['rate_info']['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
+                          <a href="<?php echo base_url('index.php/rates/delete/'.$v['rate_info']['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
                         <?php endif; ?>
                       </td>
                       <?php endif; ?>

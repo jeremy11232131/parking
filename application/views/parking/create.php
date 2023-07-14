@@ -36,7 +36,7 @@
             <div class="box-header">
               <h3 class="box-title">Add Parking</h3>
             </div>
-            <form role="form" action="<?php base_url('parking/create') ?>" method="post">
+            <form role="form" action="<?php base_url('index.php/parking/create') ?>" method="post">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>
@@ -73,7 +73,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('parking/') ?>" class="btn btn-warning">Back</a>
+                <a href="<?php echo base_url('index.php/parking/') ?>" class="btn btn-warning">Back</a>
               </div>
             </form>
           </div>
@@ -101,7 +101,7 @@
         var value = $(this).val();
 
         $.ajax({
-          url: <?php echo "'". base_url('parking/getCategoryRate/') . "'"; ?>  + value,
+          url: <?php echo "'". base_url('index.php/parking/getCategoryRate/') . "'"; ?>  + value,
           type: 'post',
           dataType: 'json',
           success:function(response) {

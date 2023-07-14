@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'db_parking',
+	'hostname' => 'database-1.ckrguzcb8xte.us-east-1.rds.amazonaws.com',
+	'username' => 'admin',
+	'password' => 'admin123',
+	'database' => 'Smart_Parking_System_Database',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

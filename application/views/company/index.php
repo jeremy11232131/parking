@@ -34,7 +34,7 @@
             <div class="box-header">
               <h3 class="box-title">Company info</h3>
             </div>
-            <form role="form" action="<?php base_url('company/') ?>" method="post">
+            <form role="form" action="<?php base_url('index.php/company/') ?>" method="post">
               <div class="box-body">
 
                 <?php echo validation_errors(); ?>

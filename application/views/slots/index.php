@@ -33,7 +33,7 @@
           <?php endif; ?>
 
           <?php if(in_array('createSlots', $user_permission)): ?>
-            <a href="<?php echo base_url('slots/create') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Add Slot</a>
+            <a href="<?php echo base_url('index.php/slots/create') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Add Slot</a>
             <br /> <br />
           <?php endif; ?>
 
@@ -78,10 +78,10 @@
                       <?php if(in_array('updateSlots', $user_permission) || in_array('deleteSlots', $user_permission)): ?>
                       <td>
                         <?php if(in_array('updateSlots', $user_permission)): ?>
-                          <a href="<?php echo base_url('slots/edit/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                          <a href="<?php echo base_url('index.php/slots/edit/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-pencil"></i></a>
                         <?php endif; ?>
                         <?php if(in_array('deleteSlots', $user_permission)): ?>
-                          <a href="<?php echo base_url('slots/delete/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
+                          <a href="<?php echo base_url('index.php/slots/delete/'.$v['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
                         <?php endif; ?>
                       </td>
                       <?php endif; ?>

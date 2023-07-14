@@ -33,7 +33,7 @@
           <div class="box-header">
             <h3 class="box-title">Edit Parking</h3>
           </div>
-          <form role="form" action="<?php base_url('parking/edit') ?>" method="post">
+          <form role="form" action="<?php base_url('index.php/parking/edit') ?>" method="post">
             <div class="box-body">
 
               <?php echo validation_errors(); ?>
@@ -81,7 +81,7 @@
 
             <div class="box-footer">
               <button type="submit" class="btn btn-primary">Save Changes</button>
-              <a href="<?php echo base_url('parking/') ?>" class="btn btn-warning">Back</a>
+              <a href="<?php echo base_url('index.php/parking/') ?>" class="btn btn-warning">Back</a>
             </div>
           </form>
         </div>
@@ -105,7 +105,7 @@
             <h3>Update payment</h3>
           </div>
 
-          <form action="<?php echo base_url('parking/updatepayment/') ?>" method="post">
+          <form action="<?php echo base_url('index.php/parking/updatepayment/') ?>" method="post">
             <div class="box-body">
               <?php
               date_default_timezone_set("Asia/Kuala_Lumpur");
@@ -143,7 +143,7 @@
             <div class="box-footer">
               <input type="hidden" name="parking_id" id="parking_id" value="<?php echo $save_parking_data['id'];  ?>">
               <button type="submit" class="btn btn-primary">Confirm payment</button>
-              <a href="<?php echo base_url('parking/') ?>" class="btn btn-warning">Back</a>
+              <a href="<?php echo base_url('index.php/parking/') ?>" class="btn btn-warning">Back</a>
             </div>
 
           </form>
@@ -170,7 +170,7 @@
       var value = $(this).val();
 
       $.ajax({
-        url: <?php echo "'" . base_url('parking/getCategoryRate/') . "'"; ?> + value,
+        url: <?php echo "'" . base_url('index.php/parking/getCategoryRate/') . "'"; ?> + value,
         type: 'post',
         dataType: 'json',
         success: function(response) {

@@ -31,7 +31,7 @@
         <?php endif; ?>
 
         <?php if (in_array('createParking', $user_permission)) : ?>
-          <a href="<?php echo base_url('parking/create') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Add Parking</a>
+          <a href="<?php echo base_url('index.php/parking/create') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Add Parking</a>
           <br /> <br />
         <?php endif; ?>
 
@@ -114,15 +114,15 @@
                     <?php if (in_array('updateParking', $user_permission) || in_array('deleteParking', $user_permission) || in_array('viewParking', $user_permission)) : ?>
                       <td>
                         <?php if (in_array('updateParking', $user_permission)) : ?>
-                          <a href="<?php echo base_url('parking/edit/' . $v['parking']['id']) ?>" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                          <a href="<?php echo base_url('index.php/parking/edit/' . $v['parking']['id']) ?>" class="btn btn-default"><i class="fa fa-pencil"></i></a>
                         <?php endif; ?>
                         <?php if (in_array('deleteParking', $user_permission)) : ?>
-                          <a href="<?php echo base_url('parking/delete/' . $v['parking']['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
+                          <a href="<?php echo base_url('index.php/parking/delete/' . $v['parking']['id']) ?>" class="btn btn-default"><i class="fa fa-trash"></i></a>
                         <?php endif; ?>
                         <?php if (in_array('viewParking', $user_permission)) : ?>
-                          <!-- onclick="printParking(<?php echo "'" . base_url('parking/printInvoice/' . $v['parking']['id']) . "'"; ?>)" -->
+                          <!-- onclick="printParking(<?php echo "'" . base_url('index.php/parking/printInvoice/' . $v['parking']['id']) . "'"; ?>)" -->
                           <a target="_blank"
-                          href="<?= base_url('parking/printInvoice/' . $v['parking']['id']) ?>" 
+                          href="<?= base_url('index.php/parking/printInvoice/' . $v['parking']['id']) ?>" 
                            class="btn btn-default"><i class="fa fa-print"></i></a>
                         <?php endif; ?>
                       </td>
