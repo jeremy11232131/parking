@@ -19,7 +19,7 @@ class Users extends Admin_Controller
 	{
 
 		if(!in_array('viewUser', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 		
 		$user_data = $this->model_users->getUserData();
@@ -41,7 +41,7 @@ class Users extends Admin_Controller
 	public function create()
 	{
 		if(!in_array('createUser', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$this->form_validation->set_rules('groups', 'Group', 'required');
@@ -67,11 +67,11 @@ class Users extends Admin_Controller
         	$create = $this->model_users->create($data, $this->input->post('groups'));
         	if($create == true) {
         		$this->session->set_flashdata('success', 'Successfully created');
-        		redirect('users/', 'refresh');
+        		redirect('index.php/users/', 'refresh');
         	}
         	else {
         		$this->session->set_flashdata('errors', 'Error occurred!!');
-        		redirect('users/create', 'refresh');
+        		redirect('index.php/users/create', 'refresh');
         	}
         }
         else {
@@ -96,7 +96,7 @@ class Users extends Admin_Controller
 	public function edit($id = null)
 	{
 		if(!in_array('updateUser', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if($id) {
@@ -121,11 +121,11 @@ class Users extends Admin_Controller
 		        	$update = $this->model_users->edit($data, $id, $this->input->post('groups'));
 		        	if($update == true) {
 		        		$this->session->set_flashdata('success', 'Successfully created');
-		        		redirect('users/', 'refresh');
+		        		redirect('index.php/users/', 'refresh');
 		        	}
 		        	else {
 		        		$this->session->set_flashdata('errors', 'Error occurred!!');
-		        		redirect('users/edit/'.$id, 'refresh');
+		        		redirect('index.php/users/edit/'.$id, 'refresh');
 		        	}
 		        }
 		        else {
@@ -149,11 +149,11 @@ class Users extends Admin_Controller
 			        	$update = $this->model_users->edit($data, $id, $this->input->post('groups'));
 			        	if($update == true) {
 			        		$this->session->set_flashdata('success', 'Successfully updated');
-			        		redirect('users/', 'refresh');
+			        		redirect('index.php/users/', 'refresh');
 			        	}
 			        	else {
 			        		$this->session->set_flashdata('errors', 'Error occurred!!');
-			        		redirect('users/edit/'.$id, 'refresh');
+			        		redirect('index.php/users/edit/'.$id, 'refresh');
 			        	}
 					}
 			        else {
@@ -192,7 +192,7 @@ class Users extends Admin_Controller
 	{
 
 		if(!in_array('deleteUser', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if($id) {
@@ -202,11 +202,11 @@ class Users extends Admin_Controller
 					$delete = $this->model_users->delete($id);
 					if($delete == true) {
 		        		$this->session->set_flashdata('success', 'Successfully removed');
-		        		redirect('users/', 'refresh');
+		        		redirect('index.php/users/', 'refresh');
 		        	}
 		        	else {
 		        		$this->session->set_flashdata('error', 'Error occurred!!');
-		        		redirect('users/delete/'.$id, 'refresh');
+		        		redirect('index.php/users/delete/'.$id, 'refresh');
 		        	}
 
 			}	
@@ -221,7 +221,7 @@ class Users extends Admin_Controller
 	{
 
 		if(!in_array('viewProfile', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$user_id = $this->session->userdata('id');
@@ -239,7 +239,7 @@ class Users extends Admin_Controller
 	{
 
 		if(!in_array('updateSetting', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$id = $this->session->userdata('id');
@@ -265,11 +265,11 @@ class Users extends Admin_Controller
 		        	$update = $this->model_users->edit($data, $id);
 		        	if($update == true) {
 		        		$this->session->set_flashdata('success', 'Successfully updated');
-		        		redirect('users/setting/', 'refresh');
+		        		redirect('index.php/users/setting/', 'refresh');
 		        	}
 		        	else {
 		        		$this->session->set_flashdata('errors', 'Error occurred!!');
-		        		redirect('users/setting/', 'refresh');
+		        		redirect('index.php/users/setting/', 'refresh');
 		        	}
 		        }
 		        else {
@@ -293,11 +293,11 @@ class Users extends Admin_Controller
 			        	$update = $this->model_users->edit($data, $id, $this->input->post('groups'));
 			        	if($update == true) {
 			        		$this->session->set_flashdata('success', 'Successfully updated');
-			        		redirect('users/setting/', 'refresh');
+			        		redirect('index.php/users/setting/', 'refresh');
 			        	}
 			        	else {
 			        		$this->session->set_flashdata('errors', 'Error occurred!!');
-			        		redirect('users/setting/', 'refresh');
+			        		redirect('index.php/users/setting/', 'refresh');
 			        	}
 					}
 			        else {

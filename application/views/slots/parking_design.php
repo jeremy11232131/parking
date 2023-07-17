@@ -218,7 +218,7 @@
 
     ?>
     <div class="container">
-        <a href="<?= base_url() ?>" class="button">Home</a>
+        <a href="<?= base_url('index.php/dashboard') ?>" class="button">Home</a>
         <div class="left-section">
             <h2>Welcome</h2>
             <img src="https://img.freepik.com/premium-vector/parking-space-icon-where-you-can-park-your-car-flat-vector-illustration-isolated-white-background_124715-1477.jpg?w=2000" alt="Additional Image">

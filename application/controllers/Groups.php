@@ -17,7 +17,7 @@ class Groups extends Admin_Controller
 	public function index()
 	{
 		if(!in_array('viewGroup', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$groups_data = $this->model_groups->getGroupData();
@@ -30,7 +30,7 @@ class Groups extends Admin_Controller
 	{
 
 		if(!in_array('createGroup', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$this->form_validation->set_rules('group_name', 'Group name', 'required');
@@ -47,11 +47,11 @@ class Groups extends Admin_Controller
         	$create = $this->model_groups->create($data);
         	if($create == true) {
         		$this->session->set_flashdata('success', 'Successfully created');
-        		redirect('groups/', 'refresh');
+        		redirect('index.php/groups/', 'refresh');
         	}
         	else {
         		$this->session->set_flashdata('errors', 'Error occurred!!');
-        		redirect('groups/create', 'refresh');
+        		redirect('index.php/groups/create', 'refresh');
         	}
         }
         else {
@@ -64,7 +64,7 @@ class Groups extends Admin_Controller
 	{
 
 		if(!in_array('updateGroup', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if($id) {
@@ -83,11 +83,11 @@ class Groups extends Admin_Controller
 	        	$update = $this->model_groups->edit($data, $id);
 	        	if($update == true) {
 	        		$this->session->set_flashdata('success', 'Successfully updated');
-	        		redirect('groups/', 'refresh');
+	        		redirect('index.php/groups/', 'refresh');
 	        	}
 	        	else {
 	        		$this->session->set_flashdata('errors', 'Error occurred!!');
-	        		redirect('groups/edit/'.$id, 'refresh');
+	        		redirect('index.php/groups/edit/'.$id, 'refresh');
 	        	}
 	        }
 	        else {
@@ -102,7 +102,7 @@ class Groups extends Admin_Controller
 	public function delete($id)
 	{
 		if(!in_array('deleteGroup', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if($id) {
@@ -111,17 +111,17 @@ class Groups extends Admin_Controller
 				$check = $this->model_groups->existInUserGroup($id);
 				if($check == true) {
 					$this->session->set_flashdata('error', 'Group exists in the users');
-	        		redirect('groups/', 'refresh');
+	        		redirect('index.php/groups/', 'refresh');
 				}
 				else {
 					$delete = $this->model_groups->delete($id);
 					if($delete == true) {
 		        		$this->session->set_flashdata('success', 'Successfully removed');
-		        		redirect('groups/', 'refresh');
+		        		redirect('index.php/groups/', 'refresh');
 		        	}
 		        	else {
 		        		$this->session->set_flashdata('error', 'Error occurred!!');
-		        		redirect('groups/delete/'.$id, 'refresh');
+		        		redirect('index.php/groups/delete/'.$id, 'refresh');
 		        	}
 				}	
 			}	

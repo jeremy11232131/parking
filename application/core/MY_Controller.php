@@ -37,7 +37,7 @@ class Admin_Controller extends MY_Controller
 	{
 		$session_data = $this->session->userdata();
 		if($session_data['logged_in'] == TRUE) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 	}
 
@@ -45,7 +45,7 @@ class Admin_Controller extends MY_Controller
 	{
 		$session_data = $this->session->userdata();
 		if($session_data['logged_in'] == FALSE) {
-			redirect('auth/login', 'refresh');
+			redirect('index.php/auth/login', 'refresh');
 		}
 	}
 

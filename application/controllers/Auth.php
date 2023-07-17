@@ -42,7 +42,7 @@ class Auth extends Admin_Controller
 					);
 
 					$this->session->set_userdata($logged_in_sess);
-					redirect('dashboard', 'refresh');
+					redirect('index.php/dashboard', 'refresh');
 				} else {
 					$this->data['errors'] = 'Incorrect username/password combination';
 					$this->load->view('login', $this->data);
@@ -64,6 +64,6 @@ class Auth extends Admin_Controller
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect('auth/login', 'refresh');
+		redirect('index.php/auth/login', 'refresh');
 	}
 }

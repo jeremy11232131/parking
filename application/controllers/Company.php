@@ -14,7 +14,7 @@ class Company extends Admin_Controller
 	public function index() 
 	{
         if(!in_array('updateCompany', $this->permission)) {
-            redirect('dashboard', 'refresh');
+            redirect('index.php/dashboard', 'refresh');
         }
 
 		$company_id = 1;
@@ -40,7 +40,7 @@ class Company extends Admin_Controller
         		$this->session->set_flashdata('errors', 'Error occurred!!');
         	}
 
-        	redirect('company/', 'refresh');
+        	redirect('index.php/company/', 'refresh');
         }
         else {
 			$company_data = $this->model_company->getCompanyData($company_id);

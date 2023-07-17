@@ -18,7 +18,7 @@ class Category extends Admin_Controller
 	public function index()
 	{
 		if(!in_array('viewCategory', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$category_data = $this->model_category->getCategoryData();
@@ -29,7 +29,7 @@ class Category extends Admin_Controller
 	public function create()
 	{
 		if(!in_array('createCategory', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$this->form_validation->set_rules('category_name', 'Category name', 'required');
@@ -45,11 +45,11 @@ class Category extends Admin_Controller
         	$create = $this->model_category->create($data);
         	if($create == true) {
         		$this->session->set_flashdata('success', 'Successfully created');
-        		redirect('category/', 'refresh');
+        		redirect('index.php/category/', 'refresh');
         	}
         	else {
         		$this->session->set_flashdata('errors', 'Error occurred!!');
-        		redirect('category/create', 'refresh');
+        		redirect('index.php/category/create', 'refresh');
         	}
         }
         else {
@@ -61,7 +61,7 @@ class Category extends Admin_Controller
 	public function edit($id = null)
 	{
 		if(!in_array('updateCategory', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if($id) {
@@ -78,11 +78,11 @@ class Category extends Admin_Controller
 	        	$update = $this->model_category->edit($data, $id);
 	        	if($update == true) {
 	        		$this->session->set_flashdata('success', 'Successfully updated');
-	        		redirect('category/', 'refresh');
+	        		redirect('index.php/category/', 'refresh');
 	        	}
 	        	else {
 	        		$this->session->set_flashdata('errors', 'Error occurred!!');
-	        		redirect('category/edit/'.$id, 'refresh');
+	        		redirect('index.php/category/edit/'.$id, 'refresh');
 	        	}
 	        }
 	        else {
@@ -100,7 +100,7 @@ class Category extends Admin_Controller
 	public function delete($id = null)
 	{
 		if(!in_array('deleteCategory', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if($id) {
@@ -109,17 +109,17 @@ class Category extends Admin_Controller
 				// $check = $this->model_groups->existInUserGroup($id);
 				// if($check == true) {
 				// 	$this->session->set_flashdata('error', 'Group exists in the users');
-	   //      		redirect('category/', 'refresh');
+	   //      		redirect('index.php/category/', 'refresh');
 				// }
 				// else {
 					$delete = $this->model_category->delete($id);
 					if($delete == true) {
 		        		$this->session->set_flashdata('success', 'Successfully removed');
-		        		redirect('category/', 'refresh');
+		        		redirect('index.php/category/', 'refresh');
 		        	}
 		        	else {
 		        		$this->session->set_flashdata('error', 'Error occurred!!');
-		        		redirect('category/delete/'.$id, 'refresh');
+		        		redirect('index.php/category/delete/'.$id, 'refresh');
 		        	}
 				// }	
 			}	

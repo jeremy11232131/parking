@@ -23,7 +23,7 @@ class Parking extends Admin_Controller
 	{
 
 		if (!in_array('viewParking', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$parking_data = $this->model_parking->getParkingData();
@@ -49,7 +49,7 @@ class Parking extends Admin_Controller
 	public function create()
 	{
 		if (!in_array('createParking', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$this->form_validation->set_rules('parking_slot', 'Slot', 'required');
@@ -82,14 +82,14 @@ class Parking extends Admin_Controller
 
 				if ($create == true && $update_slot == true) {
 					$this->session->set_flashdata('success', 'Successfully created');
-					redirect('parking/', 'refresh');
+					redirect('index.php/parking/', 'refresh');
 				} else {
 					$this->session->set_flashdata('errors', 'Error occurred!!');
-					redirect('parking/create', 'refresh');
+					redirect('index.php/parking/create', 'refresh');
 				}
 			} else {
 				$this->session->set_flashdata('errors', 'Error occurred!!');
-				redirect('parking/create', 'refresh');
+				redirect('index.php/parking/create', 'refresh');
 			}
 		} else {
 			$vehicle_cat = $this->model_category->getActiveCategoryData();
@@ -106,7 +106,7 @@ class Parking extends Admin_Controller
 	public function edit($id = null)
 	{
 		if (!in_array('updateParking', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if ($id) {
@@ -143,14 +143,14 @@ class Parking extends Admin_Controller
 
 					if ($update_parking_data == true && $update_slot == true) {
 						$this->session->set_flashdata('success', 'Successfully created');
-						redirect('parking/', 'refresh');
+						redirect('index.php/parking/', 'refresh');
 					} else {
 						$this->session->set_flashdata('errors', 'Error occurred!!');
-						redirect('parking/create', 'refresh');
+						redirect('index.php/parking/create', 'refresh');
 					}
 				} else {
 					$this->session->set_flashdata('errors', 'Error occurred!!');
-					redirect('parking/create', 'refresh');
+					redirect('index.php/parking/create', 'refresh');
 				}
 			} else {
 				$vehicle_cat = $this->model_category->getCategoryData();
@@ -183,7 +183,7 @@ class Parking extends Admin_Controller
 	public function delete($id = null)
 	{
 		if (!in_array('deleteParking', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if ($id) {
@@ -192,10 +192,10 @@ class Parking extends Admin_Controller
 				$delete = $this->model_parking->delete($id);
 				if ($delete == true) {
 					$this->session->set_flashdata('success', 'Successfully removed');
-					redirect('parking/', 'refresh');
+					redirect('index.php/parking/', 'refresh');
 				} else {
 					$this->session->set_flashdata('error', 'Error occurred!!');
-					redirect('parking/delete/' . $id, 'refresh');
+					redirect('index.php/parking/delete/' . $id, 'refresh');
 				}
 			} else {
 				$this->data['id'] = $id;
@@ -207,7 +207,7 @@ class Parking extends Admin_Controller
 	public function printInvoice($id)
 	{
 		if (!in_array('viewParking', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if ($id) {
@@ -297,7 +297,7 @@ class Parking extends Admin_Controller
 	public function updatepayment()
 	{
 		if (!in_array('updateParking', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$id = $this->input->post('parking_id');
@@ -306,10 +306,10 @@ class Parking extends Admin_Controller
 			$updatePayment = $this->model_parking->updatePayment($id, 1);
 			if ($updatePayment == true) {
 				$this->session->set_flashdata('success', 'Successfully updated');
-				redirect('parking/', 'refresh');
+				redirect('index.php/parking/', 'refresh');
 			} else {
 				$this->session->set_flashdata('payment_error', 'Error occurred!!');
-				redirect('parking/edit/' . $id, 'refresh');
+				redirect('index.php/parking/edit/' . $id, 'refresh');
 			}
 		}
 	}

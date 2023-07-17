@@ -20,7 +20,7 @@ class Rates extends Admin_Controller
 	{
 
 		if(!in_array('viewRates', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$rates_data = $this->model_rates->getRateData();
@@ -42,7 +42,7 @@ class Rates extends Admin_Controller
 	public function create()
 	{
 		if(!in_array('createRates', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$this->form_validation->set_rules('rate_name', 'Rate Name', 'required');
@@ -64,11 +64,11 @@ class Rates extends Admin_Controller
         	$create = $this->model_rates->create($data);
         	if($create == true) {
         		$this->session->set_flashdata('success', 'Successfully created');
-        		redirect('rates/', 'refresh');
+        		redirect('index.php/rates/', 'refresh');
         	}
         	else {
         		$this->session->set_flashdata('errors', 'Error occurred!!');
-        		redirect('rates/create', 'refresh');
+        		redirect('index.php/rates/create', 'refresh');
         	}
         }
         else {
@@ -84,7 +84,7 @@ class Rates extends Admin_Controller
 	public function edit($id = null)
 	{
 		if(!in_array('updateRates', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if($id) {
@@ -107,11 +107,11 @@ class Rates extends Admin_Controller
 	        	$update = $this->model_rates->edit($data, $id);
 	        	if($update == true) {
 	        		$this->session->set_flashdata('success', 'Successfully updated');
-	        		redirect('rates/', 'refresh');
+	        		redirect('index.php/rates/', 'refresh');
 	        	}
 	        	else {
 	        		$this->session->set_flashdata('errors', 'Error occurred!!');
-	        		redirect('rates/edit/'.$id, 'refresh');
+	        		redirect('index.php/rates/edit/'.$id, 'refresh');
 	        	}
 	        }
 	        else {
@@ -132,7 +132,7 @@ class Rates extends Admin_Controller
 	{
 
 		if(!in_array('deleteRates', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		
@@ -142,17 +142,17 @@ class Rates extends Admin_Controller
 				// $check = $this->model_groups->existInUserGroup($id);
 				// if($check == true) {
 				// 	$this->session->set_flashdata('error', 'Group exists in the users');
-	   //      		redirect('category/', 'refresh');
+	   //      		redirect('index.php/category/', 'refresh');
 				// }
 				// else {
 					$delete = $this->model_rates->delete($id);
 					if($delete == true) {
 		        		$this->session->set_flashdata('success', 'Successfully removed');
-		        		redirect('rates/', 'refresh');
+		        		redirect('index.php/rates/', 'refresh');
 		        	}
 		        	else {
 		        		$this->session->set_flashdata('error', 'Error occurred!!');
-		        		redirect('rates/delete/'.$id, 'refresh');
+		        		redirect('index.php/rates/delete/'.$id, 'refresh');
 		        	}
 				// }	
 			}	

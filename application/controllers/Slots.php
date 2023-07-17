@@ -45,7 +45,7 @@ class Slots extends Admin_Controller
 	{
 
 		if (!in_array('viewSlots', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 
@@ -60,7 +60,7 @@ class Slots extends Admin_Controller
 	{
 
 		if (!in_array('createSlots', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		$this->form_validation->set_rules('slot_name', 'Slot name', 'required');
@@ -77,10 +77,10 @@ class Slots extends Admin_Controller
 			$create = $this->model_slots->create($data);
 			if ($create == true) {
 				$this->session->set_flashdata('success', 'Successfully created');
-				redirect('slots/', 'refresh');
+				redirect('index.php/slots/', 'refresh');
 			} else {
 				$this->session->set_flashdata('errors', 'Error occurred!!');
-				redirect('slots/create', 'refresh');
+				redirect('index.php/slots/create', 'refresh');
 			}
 		} else {
 			$this->render_template('slots/create', $this->data);
@@ -90,7 +90,7 @@ class Slots extends Admin_Controller
 	public function edit($id = null)
 	{
 		if (!in_array('updateSlots', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if ($id) {
@@ -108,10 +108,10 @@ class Slots extends Admin_Controller
 				$update = $this->model_slots->edit($data, $id);
 				if ($update == true) {
 					$this->session->set_flashdata('success', 'Successfully updated');
-					redirect('slots/', 'refresh');
+					redirect('index.php/slots/', 'refresh');
 				} else {
 					$this->session->set_flashdata('errors', 'Error occurred!!');
-					redirect('slots/edit/' . $id, 'refresh');
+					redirect('index.php/slots/edit/' . $id, 'refresh');
 				}
 			} else {
 				// false case
@@ -125,7 +125,7 @@ class Slots extends Admin_Controller
 	public function delete($id = null)
 	{
 		if (!in_array('deleteSlots', $this->permission)) {
-			redirect('dashboard', 'refresh');
+			redirect('index.php/dashboard', 'refresh');
 		}
 
 		if ($id) {
@@ -134,16 +134,16 @@ class Slots extends Admin_Controller
 				// $check = $this->model_groups->existInUserGroup($id);
 				// if($check == true) {
 				// 	$this->session->set_flashdata('error', 'Group exists in the users');
-				//      		redirect('category/', 'refresh');
+				//      		redirect('index.php/category/', 'refresh');
 				// }
 				// else {
 				$delete = $this->model_slots->delete($id);
 				if ($delete == true) {
 					$this->session->set_flashdata('success', 'Successfully removed');
-					redirect('slots/', 'refresh');
+					redirect('index.php/slots/', 'refresh');
 				} else {
 					$this->session->set_flashdata('error', 'Error occurred!!');
-					redirect('slots/delete/' . $id, 'refresh');
+					redirect('index.php/slots/delete/' . $id, 'refresh');
 				}
 				// }	
 			} else {
