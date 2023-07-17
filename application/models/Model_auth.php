@@ -30,7 +30,7 @@ class Model_auth extends CI_Model
 		if ($email && $password) {
 			$sql = "SELECT * FROM users 
 			INNER JOIN user_group ON user_group.user_id = users.id 
-			INNER JOIN SmartParkingSystemRDS.groups ON groups.id = user_group.group_id 
+			INNER JOIN SmartParkingSystemRDSNew.groups ON groups.id = user_group.group_id 
 			WHERE users.email = ?";
 			$query = $this->db->query($sql, array($email));
 
